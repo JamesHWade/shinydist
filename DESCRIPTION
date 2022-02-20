@@ -5,9 +5,25 @@ Authors@R: person('James', 'Wade', email = 'github@jameshwade.com', role = c('cr
 Description: The purpose of the package is to explore distributitions with Shiny. One application of this tool is to aid in simulating data.
 License: MIT + file LICENSE
 Imports: 
+    attempt,
     config (>= 0.3.1),
+    DT,
+    ggplot2,
+    glue,
     golem (>= 0.3.1),
+    htmltools,
+    processx,
     shiny (>= 1.7.1)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
+Suggests: 
+    rmarkdown,
+    knitr,
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Language: en-US
+VignetteBuilder: knitr
+URL: https://github.com/JamesHWade/shinydist
+BugReports: https://github.com/JamesHWade/shinydist/issues
