@@ -16,4 +16,56 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(shinydist)
+ggplot2::theme_set(cowplot::theme_cowplot())
 ```
+
+## Normal Distribution
+
+The normal distribution
+
+```{r norm}
+n_obs <- 500
+mean <- 0
+sd <- 2
+
+cat("# Copy this code:\nrnorm(", n_obs, ", mean = ", mean, ", sd = ", sd, ")", sep = "")
+
+norm_dist <- tibble::tibble(
+  obs   = seq_along(n_obs),
+  value = rnorm(n_obs, mean = 0, sd = 2),
+  distribution = "normal"
+)
+
+plot_dist <- function(tbl) {
+  ggplot2::ggplot(tbl) +
+    ggplot2::aes(x = value,
+                 color = distribution,
+                 fill = ggplot2::after_scale(ggplot2::alpha(color, 0.6))) +
+    ggplot2::geom_histogram(bins = n_obs / 10)
+}
+
+plot_dist(norm_dist)
+```
+
+## Gamma Distribution
+
+```{r gamma}
+n_obs <- 500
+shape <- 5
+scale <- 1
+
+mean <- shape * scale
+variance <- shape * scale^2
+
+cat("Gamma Distribution\nmean: ", mean, ", variance: ", variance,
+    "\n# Copy this code:\nrgamma(", n_obs, ", shape = ", shape, ", scale = ", scale, ")", sep = "")
+
+gamma_dist <- tibble::tibble(
+  obs   = seq_along(n_obs),
+  value = rgamma(n_obs, shape = shape, scale = scale),
+  distribution = "gamma"
+)
+
+plot_dist(gamma_dist)
+```
+
