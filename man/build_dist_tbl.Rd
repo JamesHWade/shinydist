@@ -16,21 +16,21 @@ build_dist_tbl(
 )
 }
 \arguments{
-\item{distribution}{}
+\item{distribution}{(string)}
 
-\item{n_obs}{}
+\item{n_obs}{(numeric)}
 
-\item{mu}{}
+\item{mu}{(numeric)}
 
-\item{sigma}{}
+\item{sigma}{(numeric)}
 
-\item{shape}{}
+\item{shape}{(numeric)}
 
-\item{scale}{}
+\item{scale}{(numeric)}
 
-\item{meanlog}{}
+\item{meanlog}{(numeric)}
 
-\item{sdlog}{}
+\item{sdlog}{(numeric)}
 }
 \value{
 

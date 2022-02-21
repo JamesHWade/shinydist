@@ -3,8 +3,9 @@
 #' @param data (dataframe)
 #' @param x (var) column from `data` to use as x-value
 #' @param color (var) column from `color` to specify histogram color
+#' @param n_obs (numeric) number of observations to use
 #'
-#' @return
+#' @return ggplot object
 #' @export
 plot_dist <- function(data, x = value, color = distribution, n_obs) {
   ggplot2::ggplot(data) +

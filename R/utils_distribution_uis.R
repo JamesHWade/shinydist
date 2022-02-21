@@ -1,26 +1,24 @@
 #' Build Distribution Table
 #'
-#' @param distribution 
-#' @param n_obs 
-#' @param mu 
-#' @param sigma 
-#' @param shape 
-#' @param scale 
-#' @param meanlog 
-#' @param sdlog 
+#' @param distribution (string)
+#' @param n_obs (numeric)
+#' @param mu (numeric)
+#' @param sigma (numeric)
+#' @param shape (numeric)
+#' @param scale (numeric)
+#' @param meanlog (numeric)
+#' @param sdlog (numeric)
 #'
 #' @return
 #' @export
-#'
-#' @examples
 build_dist_tbl <- function(distribution, n_obs,
                            mu = NULL, sigma = NULL,
                            shape = NULL, scale = NULL,
                            meanlog = NULL, sdlog = NULL) {
   values <- switch(distribution,
-    "normal" = rnorm(n = n_obs, mean = mu, sd = sigma),
-    "gamma"  = rgamma(n = n_obs, shape = shape, scale = scale),
-    "lognormal" = rlnorm(n = n_obs, meanlog = meanlog, sdlog = sdlog)
+    "normal" = stats::rnorm(n = n_obs, mean = mu, sd = sigma),
+    "gamma"  = stats::rgamma(n = n_obs, shape = shape, scale = scale),
+    "lognormal" = stats::rlnorm(n = n_obs, meanlog = meanlog, sdlog = sdlog)
   )
   
   tibble::tibble(
@@ -32,9 +30,8 @@ build_dist_tbl <- function(distribution, n_obs,
 
 #' Inputs for Gamma Distribution
 #'
-#' @param session 
+#' @param session (session object)
 #'
-#' @return
 use_gamma_ui <- function(session) {
   ns <- session$ns
   list(
@@ -45,22 +42,20 @@ use_gamma_ui <- function(session) {
 
 #' Inputs for Normal Distribution
 #'
-#' @param session 
+#' @param session (session object)
 #'
-#' @return
 use_norm_ui <- function(session) {
   ns <- session$ns
   list(
-    numericInput(ns("mu"), "Mean (µ)", value = 0),
-    numericInput(ns("sigma"), "Standard Deviation (σ)", value = 1)
+    numericInput(ns("mu"), "Mean (\u03BC)", value = 0),
+    numericInput(ns("sigma"), "Standard Deviation (\u03C3)", value = 1)
   )
 }
 
 #' Inputs for Log Normal Distribution
 #'
-#' @param session 
+#' @param session (session object)
 #'
-#' @return
 use_lnorm_ui <- function(session) {
   ns <- session$ns
   list(

@@ -6,14 +6,17 @@ Description: The purpose of the package is to explore distributitions with Shiny
 License: MIT + file LICENSE
 Imports: 
     attempt,
+    bslib,
     config (>= 0.3.1),
+    cowplot,
     DT,
     ggplot2,
     glue,
     golem (>= 0.3.1),
     htmltools,
     processx,
-    shiny (>= 1.7.1)
+    shiny (>= 1.7.1),
+    tibble
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2

@@ -7,10 +7,7 @@
 use_gamma_ui(session)
 }
 \arguments{
-\item{session}{}
-}
-\value{
-
+\item{session}{(session object)}
 }
 \description{
 Inputs for Gamma Distribution

@@ -12,9 +12,11 @@ plot_dist(data, x = value, color = distribution, n_obs)
 \item{x}{(var) column from `data` to use as x-value}
 
 \item{color}{(var) column from `color` to specify histogram color}
+
+\item{n_obs}{(numeric) number of observations to use}
 }
 \value{
-
+ggplot object
 }
 \description{
 Plot Distribution as Histogram
