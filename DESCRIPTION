@@ -1,6 +1,6 @@
 Package: shinydist
 Title: Explore Distributions with Shiny
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: person('James', 'Wade', email = 'github@jameshwade.com', role = c('cre', 'aut'))
 Description: The purpose of the package is to explore distributitions with Shiny. One application of this tool is to aid in simulating data.
 License: MIT + file LICENSE
